@@ -1,0 +1,9 @@
+% function
+" I am a new string, and there is a digit %d, as well as a string %s, and a float %f "% (10,'abv',1.666)
+
+format function
+' I am a new string, there is a digit{},as well as sting{}, and a float{}'. format(10,'abc,1.66)
+
+
+‘我是一个金额的表示方式：¥{}'.format(10000)
+‘我是一个金额表示的方式：¥{:,.2f}’.format(1000)
