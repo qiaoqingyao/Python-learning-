@@ -1,0 +1,40 @@
+python - 将pandas.core.groupby.SeriesGroupBy转换为DataFrame
+标签 python pandas dataframe apply pandas-groupby
+
+该question的回答不令人满意，所以我再次询问。
+
+假设我有以下Pandas DataFrame：
+
+
+df1 = pd.DataFrame({'group': ['a', 'a', 'b', 'b'], 'values': [1, 1, 2, 2]})
+
+
+我将第一列“分组”分组：
+
+g1 = df1.groupby('group')
+
+
+我现在创建了一个“ DataFrameGroupBy”。然后，从GroupBy对象中提取第一列：
+
+g1_1st_column = g1['group']
+
+
+g1_1st_column的类型为“ pandas.core.groupby.SeriesGroupBy”。请注意，它不再是“ DataFrameGroupBy”。
+
+我的问题是，如何将SeriesGroupBy对象转换回DataFrame对象？我尝试使用.to_frame（）方法，并收到以下错误：
+
+g1_1st_column = g1['group'].to_frame()
+
+
+AttributeError：无法访问“ SeriesGroupBy”对象的可调用属性“ to_frame”，请尝试使用“ apply”方法。
+
+我将如何使用apply方法或其他方法转换为DataFrame？
+
+ 
+最佳答案
+
+曼尼斯·萨拉斯瓦特（Manish Saraswat）在评论中回答了我的问题。
+
+
+g1['group'].apply(pd.DataFrame)
+文章参考： https://stackoverflow.com/questions/49390682/
