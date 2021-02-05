@@ -1,0 +1,3 @@
+data.groupby(data.index.dayofweek).mean()
+data.groupby(data.index.month).mean()
+data.groupby(data.index.year).mean()
